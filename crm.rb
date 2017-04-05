@@ -5,6 +5,5 @@ require 'sinatra'
 require_relative 'contact'
 
 get '/' do
-  'Main Menu'
-
+  erb :index
 end
