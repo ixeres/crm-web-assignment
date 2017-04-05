@@ -1,16 +1,1 @@
-<body>
 
-<h2>There are <div ="number">5</div> contacts</h2>
-
-<ul>
-<% Contact.all.each do |contact| %>
-  <div ="contact_display">
-    <li><h2><%= contact.first_name %> <%= contact.last_name %> (<%= contact.email %>) <%= contact.note %></h2></li>
-      <ul>
-        <li>Edit</li>|<li>Delete</li>
-      </ul>
-  </div>
-<% end %>
-</ul>
-</body>
-</html>

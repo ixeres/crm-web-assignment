@@ -10,13 +10,26 @@
     <h1>Bitmaker CRM</h1>
     <nav>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/new_contact">Add a contact</a></li>
-        <li><a href="/about">About</a></li>
+        <li>
+          <id ="item">
+            <a href="/">Home</a>
+          </id>
+        </li>
+        <li>
+          <a href="/new_contact">
+            <id ="item">Add a contact</a>
+            </id>
+          </li>
+        <li>
+          <id ="item">
+            <a href="/about">About</a>
+          </id>
+        </li>
       </ul>
     </nav>
   </header>
     <%= yield %>
-    <footer> (C) Bitmaker 2017 </footer>
+  <footer> (C) Bitmaker 2017
+  </footer>
   </body>
 </html>
