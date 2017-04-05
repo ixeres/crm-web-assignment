@@ -1,6 +1,4 @@
-* {
-  box-sizing: border-box;
-}
+
 
 html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -12,12 +10,11 @@ h1, footer {
   text-align: center;
   background-color: black;
   color: white;
-  margin-top: 20px;
+  margin: 0;
   padding: 20px;
 }
 
 nav {
-  background-color: grey;
   color: white;
   text-align: center;
 }
@@ -28,8 +25,17 @@ ul {
   padding: 0;
 }
 
-.item {
-  display: inline-block;
+.navbar :-webkit-any-link {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: auto;
+ }
+
+.navitem {
+      border: 1px white solid;
+      padding: 10px;
+      background-color: grey;
 }
 
 #number {
