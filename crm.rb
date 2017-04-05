@@ -31,7 +31,11 @@ post '/contacts' do
   redirect to('/contacts')
 end
 
-get '/contacts/1' do
-  @contact = Contact.find(1)
-  erb :show_contact
+get '/contacts/:id' do
+  @contact = Contact.find(params[:id].to_i)
+  if @contact
+    erb :show_contact
+  else
+    raise Sinatra::NotFound
+  end
 end
