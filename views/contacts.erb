@@ -1,1 +1,9 @@
-
+<h2 class= "preamble">There are <span id="number">5</span> contacts</h2>
+<ul>
+<% Contact.all.each do |contact| %>
+  <div class="contact_display">
+    <li><h2><%= contact.first_name %> <%= contact.last_name %> (<%= contact.email %>) <%= contact.note %></h2></li>
+    <a href="/">Edit</a> | <a href="/">Delete</a>
+  </div>
+<% end %>
+</ul>
