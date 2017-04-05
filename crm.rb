@@ -4,10 +4,10 @@
 require_relative 'contact'
 require 'sinatra'
 
-# Fake data
-Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO') #Good good fake data.
-Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
-Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
+# # Fake data
+# Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO') #Good good fake data.
+# Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
+# Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
 
 get '/' do
   @crm_app_name = "Devin's CRM"
@@ -22,4 +22,10 @@ end
 get '/new_contact' do
   @crm_app_name = "Devin's CRM"
   erb :new_contact
+end
+
+post '/contacts' do
+  @crm_app_name = "Devin's CRM"
+  Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
+  redirect to('/contacts')
 end
