@@ -18,3 +18,8 @@ get '/contacts' do
   @crm_app_name = "Devin's CRM"
   erb :contacts
 end
+
+get '/new_contact' do
+  @crm_app_name = "Devin's CRM"
+  erb :new_contact
+end
