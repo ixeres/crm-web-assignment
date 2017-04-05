@@ -4,10 +4,10 @@
 require_relative 'contact'
 require 'sinatra'
 
-# # Fake data
-# Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO') #Good good fake data.
-# Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
-# Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
+# Fake data
+Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO') #Good good fake data.
+Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
+Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
 
 get '/' do
   @crm_app_name = "Devin's CRM"

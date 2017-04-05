@@ -1,7 +1,15 @@
-<h1>Welcome to <%= @crm_app_name %>!</h1>
-<p>Main menu</p>
+<body>
+
+<h2>There are <id ="number">5</id> contacts</h2>
+
 <ul>
-  <li><a href="/contacts">View all contacts</a></li>
-  <!-- please complete me with links to other actions -->
-  <li><a href="/new_contact">Create new contact</a></li>
+<% Contact.all.each do |contact| %>
+  <div ="contact_display">
+    <li><h2><%= contact.first_name %> <%= contact.last_name %> (<%= contact.email %>) <%= contact.note %></h2></li>
+      <ul>
+        <li>Edit</li>|<li>Delete</li>
+      </ul>
+  </div>
+<% end %>
 </ul>
+</body>

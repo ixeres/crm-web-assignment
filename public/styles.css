@@ -1,0 +1,19 @@
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.2em;
+}
+
+h1, h2, footer {
+  display: block;
+}
+
+h1 {
+  background-color: black;
+  color: white;
+}
+
+nav {
+  list-style: none;
+  background-color: grey;
+  color: white;
+}
