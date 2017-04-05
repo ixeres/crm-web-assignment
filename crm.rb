@@ -5,6 +5,7 @@ require_relative 'contact'
 require 'sinatra'
 
 # Fake data
+Contact.create('Betty', 'Maker', 'betty@bitmakerlabs.com', 'Developer')
 Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO') #Good good fake data.
 Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
 Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
@@ -28,4 +29,9 @@ post '/contacts' do
   @crm_app_name = "Devin's CRM"
   Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
   redirect to('/contacts')
+end
+
+get '/contacts/1' do
+  @contact = Contact.find(1)
+  erb :show_contact
 end
