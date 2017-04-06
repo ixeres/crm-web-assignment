@@ -1,21 +1,15 @@
-
 require_relative 'contact'
 require 'sinatra'
 
-# Fake data
-
 get '/' do
-  @crm_app_name = "Devin's CRM"
   erb :index
 end
 
-get '/contacts' do
-  @crm_app_name = "Devin's CRM"
-  erb :contacts
+get '/about' do
+  erb :contact_about
 end
 
 get '/new_contact' do
-  @crm_app_name = "Devin's CRM"
   erb :new_contact
 end
 
@@ -26,7 +20,7 @@ post '/contacts' do
     email:      params[:email],
     note:       params[:note]
   )
-  redirect to('/contacts')
+  redirect to('/')
 end
 
 get '/contacts/:id' do
@@ -47,14 +41,14 @@ get '/contacts/:id/edit' do
   end
 end
 
-put '/contacts/:id' do
+put '/contacts/:id/edit' do
   @contact = Contact.find(params[:id].to_i)
   if @contact
-    @contact.first_name = params[:first_name]
-    @contact.last_name = params[:last_name]
-    @contact.email = params[:email]
-    @contact.note = params[:note]
-    redirect to('/contacts')
+    @contact.update(first_name: params[:first_name])
+    @contact.update(last_name: params[:last_name])
+    @contact.update(email: params[:email])
+    @contact.update(note: params[:note])
+    redirect to('/')
   else
     raise Sinatra::NotFound
   end
@@ -64,10 +58,22 @@ delete '/contacts/:id' do
   @contact = Contact.find(params[:id].to_i)
   if @contact
     @contact.delete
-    redirect to('/contacts')
+    redirect to('/')
   else
     raise Sinatra::NotFound
   end
+end
+
+
+get '/contacts/:id/buttondelete' do
+  @contact = Contact.find(params[:id].to_i)
+if @contact
+  @contact.delete
+  redirect to('/')
+else
+  raise Sinatra::NotFound
+end
+
 end
 
 after do
