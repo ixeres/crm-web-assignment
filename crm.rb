@@ -1,14 +1,8 @@
-# Implement the new web-based CRM here.
-# Do NOT copy the CRM class from the old crm assignment, as it won't work at all for the web-based version!
-# You'll have to implement it from scratch.
+
 require_relative 'contact'
 require 'sinatra'
 
-# # Fake data
-# Contact.create('Betty', 'Maker', 'betty@bitmakerlabs.com', 'Developer')
-# Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO') #Good good fake data.
-# Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
-# Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
+# Fake data
 
 get '/' do
   @crm_app_name = "Devin's CRM"
@@ -26,8 +20,12 @@ get '/new_contact' do
 end
 
 post '/contacts' do
-  @crm_app_name = "Devin's CRM"
-  Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
+  contact = Contact.create(
+    first_name: params[:first_name],
+    last_name:  params[:last_name],
+    email:      params[:email],
+    note:       params[:note]
+  )
   redirect to('/contacts')
 end
 

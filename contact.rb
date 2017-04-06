@@ -1,4 +1,5 @@
 #Goodbye, old contact class with all that work. I will miss you.
+gem 'activerecord', '=4.2.7'
 require 'active_record'
 require 'mini_record'
 
