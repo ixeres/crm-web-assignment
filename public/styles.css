@@ -15,7 +15,6 @@ h1, footer {
 }
 
 nav {
-  color: white;
   text-align: center;
 }
 
@@ -42,7 +41,7 @@ ul {
   border-bottom: 1px teal solid;
 }
 
-div {
+.contact_display {
   background-color: teal;
 }
 

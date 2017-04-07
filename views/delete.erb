@@ -1,6 +1,6 @@
 <h1>Delete Contact</h1>
 
-
+<div class="contact_display">
 <form action='/contacts/delete' method='post'>
   <select class="" name="selected_contact">
     <% Contact.all.each do |contact| %>
@@ -10,3 +10,4 @@
 
 <input type="submit" value="Delete Contact">
 </form>
+</div>

@@ -1,5 +1,5 @@
 <h1>Edit a Contact</h1>
-
+<div class="contact_display">
 <form action='/contacts/<%= @contact.id %>/edit' method='post'>
   <input type='hidden' name='_method' value='put'>
   <input type='text' name='first_name' value='<%= @contact.first_name %>'>
@@ -8,3 +8,4 @@
   <input type='text' name='note' value='<%= @contact.note %>'>
   <input type='submit' value='Edit Contact'>
 </form>
+</div>
